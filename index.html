@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<head>
+    <title> App Selfie por voz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Skranji:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container"></div>
+    <div style="text-align: center;">
+        <a href="" id="link" download="minhaselfie.png"></a><!-- Essa tag será usada para baixar a selfie (atualizaremos o link na próxima aula)-->
+        <h1 id="fonte">App Selfie por voz <img src="selfie.jpg" alt="" id="logo_img"> </h1>
+        <hr>
+        <h4 style="color:red;">Pressione permitir assim que o pop-up for exibido. Depois, forneça um comando de voz.</h4>
+        <div class="form-group">
+            <h3>Diga "tire minha selfie"</h3>
+            <label>Sua saída de voz: </label>
+            <textarea class="form-control" id="textbox" readonly="true" ></textarea>
+             <!-- armazenará o texto que será convertido de nosso comando
+            <textarea>: define o controle de entrtada de texto em várias linhas
+            class="form-control": classe bootstrap que adiciona o preenchimento e margem da área de texto
+            id="textbox": será utilizada no js para atualizar o valor de textarea
+            readonly="true": definiremos para true para que os valores gerados não sejam editados    -->
+
+        </div>
+
+        <button class="btn btn-primary" onclick="start()">Iniciar</button>
+        <!-- class="btn btn-primary": conté classes bootstrap:
+                    btn:removerar o estilo padrão do botão
+                    btn-primary: adiciona uma cor de fundo e de borda azul escura ao botão
+             onclick="start()": quando o botão for clicado chamaremos a função start() que gravará nossa voz e a converterá para texto.
+             -->
+        <br>
+        <p>Pressione o botão Iniciar</p>
+        <label>Sua webcam: </label>
+        <div id="camera"></div>
+        <!-- Irá refletir o resultado da webcam
+             A id fornecida nessa div irá identificá-la enquanto a atualiza com a selfie tirada -->
+        <br>
+
+        <label>Sua selfie será exibida aqui: </label>
+        <div id="result" ></div>
+        <!--Essa div irá armazenar a selfie recém tirada pela webcam  -->
+        
+    </div>
+
+    <script src="main.js"></script>
+           
+</body>
+</html>
