@@ -1,27 +1,26 @@
-body{
+body {
     background-color: beige;
 }
-h3,label,p{
+
+h3, label, p {
     color: sienna;
 }
-.btn
-{
+
+.btn {
     width: 100px;
     height: 50px;
     background-color: darkmagenta;
     font-size: 20px;
-} 
+}
 
-#camera
-{
-    width:360px;
+#camera {
+    width: 360px;
     height: 250px;
-    border:1px solid grey;
+    border: 1px solid grey;
     margin: 0 auto;
 }
 
-#logo_img
-{
+#logo_img {
     width: 100px;
     border-radius: 20px;
 }
@@ -32,11 +31,7 @@ h3,label,p{
     color: brown;
 }
 
-#textbox
-{
+#textbox {
     width: 300px;
     margin: 0 auto;
 }
-
-
-

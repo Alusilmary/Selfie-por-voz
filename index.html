@@ -1,59 +1,62 @@
 <!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
-    <title> App Selfie por voz</title>
+    <meta charset="UTF-8">
+   <!--  Define o conjunto de caracteres da página como UTF-8, que suporta a maioria dos caracteres de escrita do mundo. -->
+    <title>App Selfie por voz</title>
+    <!-- Define o título da página que aparece na aba do navegador. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    
+    <!-- Configura a visualização para garantir que a página fique bem em todos os dispositivos, especialmente móveis. -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Link para o arquivo CSS do Bootstrap, uma biblioteca de estilos que facilita a criação de layouts bonitos. -->
     <link href="https://fonts.googleapis.com/css2?family=Skranji:wght@700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.js"></script>
-
+    <!-- Link para uma fonte personalizada do Google Fonts. -->
     <link rel="stylesheet" href="style.css">
-    
+    <!-- Link para um arquivo CSS externo -->
 </head>
+
 <body>
-    <div class="container"></div>
-    <div style="text-align: center;">
-        <a href="" id="link" download="minhaselfie.png"></a><!-- Essa tag será usada para baixar a selfie (atualizaremos o link na próxima aula)-->
-        <h1 id="fonte">App Selfie por voz <img src="selfie.jpg" alt="" id="logo_img"> </h1>
+    <div class="container text-center">
+        <!-- Cria um contêiner centralizado usando classes do Bootstrap. -->
+        <h1 id="fonte">App Selfie por voz <img src="selfie.jpg" alt="Logo" id="logo_img"></h1>
+        <!--Cabeçalho principal com uma imagem ao lado  -->
         <hr>
-        <h4 style="color:red;">Pressione permitir assim que o pop-up for exibido. Depois, forneça um comando de voz.</h4>
+        <h4 style="color:red;">Pressione permitir assim que o pop-up for exibido. Depois, forneça um comando de voz.
+        </h4>
+        <!-- Cabeçalho menor com instruções em vermelho -->
         <div class="form-group">
+            <!--Agrupamento de elementos de formulário.  -->
             <h3>Diga "tire minha selfie"</h3>
-            <label>Sua saída de voz: </label>
-            <textarea class="form-control" id="textbox" readonly="true" ></textarea>
-             <!-- armazenará o texto que será convertido de nosso comando
-            <textarea>: define o controle de entrtada de texto em várias linhas
-            class="form-control": classe bootstrap que adiciona o preenchimento e margem da área de texto
-            id="textbox": será utilizada no js para atualizar o valor de textarea
-            readonly="true": definiremos para true para que os valores gerados não sejam editados    -->
-
+            <!-- Cabeçalho explicando o comando de voz. -->
+            <label>Sua saída de voz:</label>
+            <!-- Rótulo para a área de texto. -->
+            <textarea class="form-control" id="textbox" readonly></textarea>
+            <!-- Área de texto que mostra a transcrição do comando de voz, configurada como somente leitura. -->
         </div>
-
         <button class="btn btn-primary" onclick="start()">Iniciar</button>
-        <!-- class="btn btn-primary": conté classes bootstrap:
-                    btn:removerar o estilo padrão do botão
-                    btn-primary: adiciona uma cor de fundo e de borda azul escura ao botão
-             onclick="start()": quando o botão for clicado chamaremos a função start() que gravará nossa voz e a converterá para texto.
-             -->
+        <!-- Botão que inicia o reconhecimento de voz ao ser clicado. -->
         <br>
         <p>Pressione o botão Iniciar</p>
-        <label>Sua webcam: </label>
+        <!-- Parágrafo com instruções adicionais. -->
+        <label>Sua webcam:</label>
+        <!-- Rótulo para a área da webcam. -->
         <div id="camera"></div>
-        <!-- Irá refletir o resultado da webcam
-             A id fornecida nessa div irá identificá-la enquanto a atualiza com a selfie tirada -->
+        <!-- Divisão onde a webcam será exibida. -->
         <br>
-
-        <label>Sua selfie será exibida aqui: </label>
-        <div id="result" ></div>
-        <!--Essa div irá armazenar a selfie recém tirada pela webcam  -->
-        
+        <label>Sua selfie será exibida aqui:</label>
+        <!-- Rótulo para a área onde a selfie será exibida. -->
+        <div id="result"></div>
+        <!-- Divisão onde a imagem da selfie será mostrada. -->
     </div>
 
+<!-- Os scripts são incluídos no final do body para garantir que o HTML seja carregado antes de qualquer execução de script. -->
+ <!-- Esses scripts incluem jQuery, Bootstrap e WebcamJS, além de main.js, onde está a lógica JavaScript personalizada. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.26/webcam.min.js"></script>
     <script src="main.js"></script>
-           
 </body>
+
 </html>
